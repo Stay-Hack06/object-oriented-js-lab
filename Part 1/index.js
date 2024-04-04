@@ -8,6 +8,10 @@ function Flower(color, petals, smell){
     this.petals = petals;
     this.smellsPretty = smell;
 }
+// Creating Flower objects
+let rose = new Flower('red', 32, true);
+let sunflower = new Flower('yellow', 24, false);
+let lavender = new Flower('purple', 28, true);
 
 
 
@@ -25,7 +29,7 @@ console.log(myOtherContact.name);
 
 // What would be logged to the console when this code is run?
 
-
+//Everest
 
 // Question 3: 
 // Given the following code:
@@ -37,8 +41,9 @@ function Animal(species, noise) {
     console.log(this.noise + ", " + this.noise);
   }
 }
-// How would you create an instance of an Animal?
 
+// How would you create an instance of an Animal?
+const dog = new Animal('Canine', 'Bark');
 
 
 
@@ -54,6 +59,18 @@ function Animal(species, noise) {
 // Create 3 objects with the constructor function
 
 
+function TodoList(description, isDone) {
+  this.description = description;
+  this.isDone = isDone;
+  this.taskDone = function() {
+      console.log(`Task "${this.description}" is done.`);
+  };
+}
+
+const task1 = new TodoList('Complete project', false);
+const task2 = new TodoList('Buy groceries', false);
+const task3 = new TodoList('Call the Doctor', false);
+
 
 
 //Question 5:
@@ -68,3 +85,27 @@ function Animal(species, noise) {
 
 
 // Create two instances of the Account object and test the deposit and withdraw methods.
+// Exercise: FinTech Project
+
+function Account(accountNumber, accountHolder, balance = 0) {
+  this.accountNumber = accountNumber;
+  this.accountHolder = accountHolder;
+  this.balance = balance;
+  
+  this.deposit = function(amount) {
+      this.balance += amount;
+  };
+  
+  this.withdraw = function(amount) {
+      this.balance -= amount;
+  };
+}
+
+const account1 = new Account(123456, 'Teagen');
+const account2 = new Account(789012, 'Ruby');
+
+account1.deposit(1000);
+account1.withdraw(500);
+
+account2.deposit(500);
+account2.withdraw(200);
